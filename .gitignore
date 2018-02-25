@@ -3,4 +3,5 @@
 users/migrations/*
 courses/migrations/*
 organization/migrations/*
+operation/migrations/*
 log/*
