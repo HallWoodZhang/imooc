@@ -1,7 +1,7 @@
 *.pyc
 .idea*
-users/migrations/*
-courses/migrations/*
-organization/migrations/*
-operation/migrations/*
+apps/users/migrations/*
+apps/courses/migrations/*
+apps/organization/migrations/*
+apps/operation/migrations/*
 log/*
