@@ -1,5 +1,6 @@
 *.pyc
 .idea*
+*.jpg
 apps/users/migrations/*
 apps/courses/migrations/*
 apps/organization/migrations/*

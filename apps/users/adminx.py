@@ -1,9 +1,21 @@
 # _*_ coding: utf-8 _*_
 
 import xadmin
+from xadmin import views
 
-from .models import EmailVerifyRecord
-from .models import Banner
+from .models import EmailVerifyRecord, Banner
+
+
+class BaseSetting(object):
+    enable_themes = True
+    use_booswatch = True
+
+
+class GlobalSetting(object):
+    site_title = u'imooc后台'
+    site_footer = u'hallwood_zhang@163.com'
+    menu_style = 'accordion'
+
 
 class EmailVerifyRecordAdmin(object):
     list_display = ['code', 'email', 'send_type', 'send_time']
@@ -12,14 +24,12 @@ class EmailVerifyRecordAdmin(object):
 
 
 class BannerAdmin(object):
-    # title = models.CharField(max_length=100, verbose_name=u'标题')
-    # image = models.ImageField(max_length=100, upload_to='banner/%Y/%m', verbose_name=u'轮播图')
-    # url = models.URLField(max_length=200, verbose_name=u'访问地址')
-    # index = models.IntegerField(default=100, verbose_name=u'顺序')
-    # add_time = models.DateTimeField(default=datetime.now, verbose_name=u'添加时间')
     list_display = ['image', 'title', 'url', 'index', 'add_time']
     search_fields = ['image', 'title', 'url', 'index']
+    list_filter = list_display
 
 
 xadmin.site.register(EmailVerifyRecord, EmailVerifyRecordAdmin)
 xadmin.site.register(Banner, BannerAdmin)
+xadmin.site.register(views.BaseAdminView, BaseSetting)
+xadmin.site.register(views.CommAdminView, GlobalSetting)
