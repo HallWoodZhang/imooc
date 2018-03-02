@@ -1,8 +1,10 @@
 *.pyc
 .idea*
-*.jpg
+course/*
 apps/users/migrations/*
 apps/courses/migrations/*
 apps/organization/migrations/*
 apps/operation/migrations/*
 log/*
+*.zip
+static/html/*
